@@ -8,8 +8,8 @@
     margin: $stardard-margin;
 
     & button {
-        padding: 10px;
-        margin: $stardard-margin;
+        padding: 15px;
+        margin: 10px;
         @extend %rounded;
         border: none;
     }

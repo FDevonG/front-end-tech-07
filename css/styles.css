@@ -480,7 +480,7 @@ nav a {
 .profile-image {
   max-width: 75px;
   max-height: 75px;
-  width: 50%;
+  width: 30%;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_intro.scss */
@@ -510,8 +510,8 @@ nav a {
 
 /* line 10, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
 .chart-buttons button {
-  padding: 10px;
-  margin: 20px;
+  padding: 15px;
+  margin: 10px;
   border: none;
 }
 
