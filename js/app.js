@@ -1,9 +1,25 @@
 class ChartData {
     labels = [];
     datasets = [];
-    constructor (labels, sentData) {
+    options = {};
+
+    /**
+     * Constructs a chart data class to populate charts with
+     * 
+     * @param {array} labels - the arr 
+     * @param {*} sentData 
+     * @param {*} sentLabel 
+     * @param {*} legend 
+     */
+    constructor (labels, sentData, sentLabel, legend) {
         this.labels = labels;
-        this.datasets = [{data: sentData}];
+        this.datasets = [{
+            label: sentLabel,
+            data: sentData,
+        }];
+        this.options = {
+
+        }
     }
 }
 
