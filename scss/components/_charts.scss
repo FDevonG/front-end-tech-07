@@ -1,0 +1,17 @@
+.charts{
+
+    
+}
+
+.chart-buttons{
+    @include flexy($just:center);
+    margin: $stardard-margin;
+
+    & button {
+        padding: 10px;
+        margin: $stardard-margin;
+        @extend %rounded;
+        border: none;
+    }
+
+}

@@ -1,0 +1,12 @@
+nav{
+    @include flexy($just: center);
+    background-color: $color-secondary;
+    & a {
+        margin: $stardard-margin;
+    }
+}
+
+.nav-icon {
+    min-width: 44px;
+    @extend %icon;
+}

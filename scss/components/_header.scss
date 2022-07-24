@@ -1,0 +1,44 @@
+header,
+.user-info,
+.user-info div{
+    @include flexy;
+}
+
+header{
+    padding: 20px;
+    background-color: $color-primary;
+}
+
+.user-info {
+    margin-left:auto;
+
+    & div {
+        align-items: center;
+
+        &:first-child{
+            border-right:1px solid $white;
+            margin-right:$stardard-margin;
+            position: relative;
+        }
+    }
+}
+
+.notification-icon {
+    margin-right:$stardard-margin;
+    min-width: 25px;
+    @extend %icon;
+}
+
+.notification-circle {
+    width: 10px;
+    height:10px;
+    @extend %round;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: $color-notification;
+}
+
+.header-name{
+    margin-left: $stardard-margin;
+}
