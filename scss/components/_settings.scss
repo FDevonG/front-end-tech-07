@@ -1,0 +1,23 @@
+.settings-container {
+    @include flexy($dir: column);
+    & div {
+        @include flexy($dis: inline-flex, $just: space-between);
+        align-items: center;
+        margin-bottom: map-get($margins, 'medium')
+    }
+    & div:last-child button{
+        flex: 1;
+    }
+
+    & div:last-child button + button{
+        margin-left: map-get($margins, 'xsmall' );
+    }
+
+    & div:last-child button:first-child{
+        background-color: $color-primary;
+    }
+
+    & div:last-child button:last-child{
+        background-color: $color-dark-grey;
+    }
+}

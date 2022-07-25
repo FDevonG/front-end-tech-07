@@ -1,3 +1,11 @@
-.widget{
-    margin: $stardard-margin;
+.card {
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.container {
+    margin-top:map-get($margins, 'medium');
+    margin-bottom:map-get($margins, 'medium');
+    border-bottom: $border;
 }

@@ -1,3 +1,38 @@
+.social-container{
+    @include flexy();
+    background-color: $color-grey;
+    border: 1px solid $color-dark-grey;
+    border-radius: $rounded-corners;
+    margin-bottom: 20px;
+    padding: 20px
+}
+
+.social-text-container  {
+    @include flexy($just: center, $dir: column);
+    margin-left: map-get($margins, 'medium');
+}
+
+.social-icon-bg {
+    width:75px;
+    height:75px;
+    background-color: $color-primary;
+    border-radius: $round;
+    @include flexy;
+}
+
 .social-icon{
-    
+    width: 50%;
+    fill: $white;
+    margin:auto;
+}
+
+.social-text{
+    color:$color-primary;
+    font-size: 1.5em;
+}
+
+.social-number-text{
+    color:$color-dark-grey;
+    font-weight: bold;
+    font-size: 2em;
 }

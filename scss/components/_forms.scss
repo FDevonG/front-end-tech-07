@@ -1,0 +1,43 @@
+form {
+    @include flexy($dir: column);
+    max-width: 100%;
+    & button{
+        background-color: $color-primary;
+    }
+}
+
+button {
+    border: none;
+    color: $white;
+}
+
+input,
+textarea,
+button,
+select {
+    border-radius: 5px;
+    margin-bottom: map-get($margins, 'medium' )
+}
+
+input,
+textarea,
+select {
+    background-color: $color-grey;
+    border: $border;
+}
+
+input,
+button,
+select,
+textarea{
+    padding: map-get($margins, 'small')
+}
+
+select {
+    appearance: none;
+    padding-right: map-get($margins, 'large' );
+    background-image:url(../svgs/drop-down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 25px;
+}

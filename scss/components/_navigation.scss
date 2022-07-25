@@ -1,12 +1,10 @@
 nav{
-    @include flexy($just: center);
+    @include flexy($just: space-around);
     background-color: $color-secondary;
-    & a {
-        margin: $stardard-margin;
-    }
+    padding: map-get($margins, 'medium');
 }
 
 .nav-icon {
-    min-width: 44px;
+    width: 30px;
     @extend %icon;
 }

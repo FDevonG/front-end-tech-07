@@ -1,11 +1,25 @@
 $white: #fafafa;
 $color-primary: #7477bf;
 $color-secondary: #4d4c72;
+$color-primary-opaque: rgba(116, 119, 191, 50%);
 $color-notification: #90ee90;
+$color-button: #81c98f;
+
 
 $color-grey: #f7f7f7;
 $color-dark-grey: darken($color-grey, 30%);
 
-$stardard-margin:20px;
+$margins: (
+    'xsmall': 5px,
+    'small': 10px,
+    'medium': 20px,
+    'large': 30px,
+);
+
+$border: 1px solid $color-dark-grey;
 
 $transition-duration: .5s;
+
+$round: 50%;
+$rounded: 34px;
+$rounded-corners: 5px;

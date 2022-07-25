@@ -1,6 +1,5 @@
 .profile-image{
-    max-width: 75px;
-    max-height: 75px;
-    width: 30%;
-    @extend %round;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: $round;
 }

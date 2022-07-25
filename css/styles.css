@@ -1,17 +1,12 @@
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
-.notification-circle, .profile-image {
-  border-radius: 50%;
-}
-
-/* line 5, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
-.chart-buttons button, .slider {
-  border-radius: 34px;
-}
-
-/* line 9, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
 .notification-icon, .nav-icon {
   fill: #fafafa;
   transition: 0.5s;
+}
+
+/* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
+.hidden {
+  visibility: hidden;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -393,94 +388,126 @@ template {
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
-h1,
-.header-name {
-  color: #fafafa;
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 /* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
 h1 {
+  color: #fafafa;
   font-size: 1.25em;
 }
 
+/* line 11, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
+h2 {
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+/* line 16, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
+h3 {
+  margin: 0 0 20px;
+  font-size: .9em;
+}
+
+/* line 21, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_layout.scss */
-.widget {
-  margin: 20px;
+.card {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 7, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_layout.scss */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ababab;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 header,
-.user-info,
 .user-info div {
   display: flex;
 }
 
-/* line 7, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 header {
-  padding: 20px;
   background-color: #7477bf;
+  padding: 10px;
 }
 
-/* line 12, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 11, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.header-name {
+  color: #fafafa;
+}
+
+/* line 16, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user-info {
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
 }
 
-/* line 15, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 20, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user-info div {
   align-items: center;
 }
 
-/* line 18, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 23, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user-info div:first-child {
   border-right: 1px solid #fafafa;
-  margin-right: 20px;
+  margin-right: 10px;
   position: relative;
 }
 
-/* line 26, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 31, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .notification-icon {
-  margin-right: 20px;
-  min-width: 25px;
+  width: 25px;
+  margin-right: 10px;
 }
 
-/* line 32, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 37, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .notification-circle {
   width: 10px;
   height: 10px;
+  border-radius: 50%;
   position: absolute;
-  top: 6px;
-  right: 10px;
+  top: 5px;
+  right: 8px;
   background-color: #90ee90;
 }
 
-/* line 42, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 47, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .header-name {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_navigation.scss */
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #4d4c72;
+  padding: 20px;
 }
 
-/* line 4, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_navigation.scss */
-nav a {
-  margin: 20px;
-}
-
-/* line 9, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_navigation.scss */
+/* line 7, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_navigation.scss */
 .nav-icon {
-  min-width: 44px;
+  width: 30px;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_images.scss */
 .profile-image {
-  max-width: 75px;
-  max-height: 75px;
-  width: 30%;
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_intro.scss */
@@ -489,11 +516,6 @@ nav a {
 }
 
 /* line 4, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_intro.scss */
-.intro h2 {
-  margin: 20px;
-}
-
-/* line 8, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_intro.scss */
 .intro div {
   flex: 1;
   background-color: #f7f7f7;
@@ -501,18 +523,155 @@ nav a {
   border-left: 1px solid #ababab;
 }
 
-/* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+.chart {
+  margin-bottom: 10px;
+}
+
+/* line 4, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
 .chart-buttons {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
 }
 
-/* line 10, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
-.chart-buttons button {
-  padding: 15px;
-  margin: 10px;
-  border: none;
+/* line 9, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+.chart-btn {
+  font-size: .8em;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 34px;
+  color: black;
+}
+
+/* line 17, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+.selected {
+  color: #fafafa;
+  background-color: #81c98f;
+}
+
+/* line 22, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+#mobile-users {
+  margin-top: -40px;
+}
+
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-container {
+  display: flex;
+  background-color: #f7f7f7;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/* line 10, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+/* line 15, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-icon-bg {
+  width: 75px;
+  height: 75px;
+  background-color: #7477bf;
+  border-radius: 50%;
+  display: flex;
+}
+
+/* line 23, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-icon {
+  width: 50%;
+  fill: #fafafa;
+  margin: auto;
+}
+
+/* line 29, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-text {
+  color: #7477bf;
+  font-size: 1.5em;
+}
+
+/* line 34, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_social.scss */
+.social-number-text {
+  color: #ababab;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ababab;
+}
+
+/* line 15, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+li * {
+  margin-bottom: 5px;
+}
+
+/* line 19, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+li div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 23, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+.email {
+  color: #7477bf;
+}
+
+/* line 27, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
+.gt-symbol {
+  display: none;
+}
+
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 3, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container div {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* line 8, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container div:last-child button {
+  flex: 1;
+}
+
+/* line 12, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container div:last-child button + button {
+  margin-left: 5px;
+}
+
+/* line 16, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container div:last-child button:first-child {
+  background-color: #7477bf;
+}
+
+/* line 20, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+.settings-container div:last-child button:last-child {
+  background-color: #ababab;
 }
 
 /* The switch - the box around the slider */
@@ -520,7 +679,7 @@ nav a {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 80px;
   height: 34px;
 }
 
@@ -543,38 +702,102 @@ nav a {
   bottom: 0;
   background-color: #ccc;
   transition: 0.5s;
+  border-radius: 34px;
+  border: 2px solid #ababab;
 }
 
-/* line 29, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
-.slider:before {
+/* line 30, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
+.slider::before {
   position: absolute;
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
-  bottom: 4px;
   background-color: white;
   transition: 0.5s;
+  border: 2px solid #ababab;
 }
 
 /* line 40, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #7477bf;
 }
 
 /* line 44, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #7477bf;
 }
 
 /* line 48, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(46px);
 }
 
 /* line 52, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
 .slider:before {
   border-radius: 50%;
+}
+
+/* line 56, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
+.toggle-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+}
+
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+/* line 4, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+form button {
+  background-color: #7477bf;
+}
+
+/* line 9, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+button {
+  border: none;
+  color: #fafafa;
+}
+
+/* line 14, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+input,
+textarea,
+button,
+select {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* line 22, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+input,
+textarea,
+select {
+  background-color: #f7f7f7;
+  border: 1px solid #ababab;
+}
+
+/* line 29, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+input,
+button,
+select,
+textarea {
+  padding: 10px;
+}
+
+/* line 36, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+select {
+  appearance: none;
+  padding-right: 30px;
+  background-image: url(../svgs/drop-down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  background-size: 25px;
 }
 
 /*# sourceMappingURL=styles.css.map */

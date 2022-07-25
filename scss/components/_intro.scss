@@ -1,14 +1,10 @@
 .intro {
     @include flexy;
 
-    h2{
-        margin: $stardard-margin;
-    }
-
     & div{
         flex: 1;
         background-color: $color-grey;
-        border-bottom: 1px solid $color-dark-grey;
-        border-left: 1px solid $color-dark-grey;
+        border-bottom: $border;
+        border-left: $border;
     }
 }

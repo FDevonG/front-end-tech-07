@@ -1,17 +1,24 @@
-.charts{
-
-    
+.chart {
+    margin-bottom: map-get($margins, 'small')
 }
-
 .chart-buttons{
     @include flexy($just:center);
-    margin: $stardard-margin;
+    margin: map-get($margins, 'small');
+}
 
-    & button {
-        padding: 15px;
-        margin: 10px;
-        @extend %rounded;
-        border: none;
-    }
+.chart-btn{
+    font-size: .8em;
+    padding: 10px;
+    margin: map-get($margins, 'xsmall');
+    border-radius: $rounded;
+    color: black;
+}
 
+.selected {
+    color: $white;
+    background-color: $color-button;
+}
+
+#mobile-users {
+    margin-top: -40px;
 }

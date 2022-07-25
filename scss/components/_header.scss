@@ -1,15 +1,20 @@
 header,
-.user-info,
 .user-info div{
     @include flexy;
 }
 
 header{
-    padding: 20px;
     background-color: $color-primary;
+    padding:map-get($margins, 'small');
 }
 
+.header-name {
+    color: $white;
+}
+
+
 .user-info {
+    @include flexy($just: space-between);
     margin-left:auto;
 
     & div {
@@ -17,28 +22,28 @@ header{
 
         &:first-child{
             border-right:1px solid $white;
-            margin-right:$stardard-margin;
+            margin-right: map-get($margins, 'small');
             position: relative;
         }
     }
 }
 
 .notification-icon {
-    margin-right:$stardard-margin;
-    min-width: 25px;
+    width: 25px;
     @extend %icon;
+    margin-right:map-get($margins, 'small');
 }
 
 .notification-circle {
     width: 10px;
     height:10px;
-    @extend %round;
+    border-radius: $round;
     position: absolute;
-    top: 6px;
-    right: 10px;
+    top: 5px;
+    right: 8px;
     background-color: $color-notification;
 }
 
 .header-name{
-    margin-left: $stardard-margin;
+    margin-left:map-get($margins, 'small');
 }

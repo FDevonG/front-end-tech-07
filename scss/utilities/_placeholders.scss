@@ -1,12 +1,8 @@
-%round {
-    border-radius: 50%;
-}
-
-%rounded {
-    border-radius: 34px;
-}
-
 %icon {
     fill: $white;
     transition: $transition-duration;
+}
+
+.hidden {
+    visibility: hidden;
 }
