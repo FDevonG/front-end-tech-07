@@ -1,13 +1,20 @@
 $white: #fafafa;
 $color-primary: #7477bf;
 $color-secondary: #4d4c72;
-$color-primary-opaque: rgba(116, 119, 191, 50%);
 $color-notification: #90ee90;
-$color-button: #81c98f;
+$color-chart-button: #81c98f;
 
 
 $color-grey: #f7f7f7;
 $color-dark-grey: darken($color-grey, 30%);
+
+$main-font-stack: 'Yantramanav', sans-serif;
+$font-weights: (
+    'light': 100,
+    'regular': 400,
+    'bold': 700,
+);
+$base-font-size: 16px;
 
 $margins: (
     'xsmall': 5px,

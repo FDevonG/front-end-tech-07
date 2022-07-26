@@ -1,10 +1,22 @@
 nav{
     @include flexy($just: space-around);
     background-color: $color-secondary;
-    padding: map-get($margins, 'medium');
+    padding: map-get($margins, 'small');
+
+    & a {
+        padding: map-get($margins, 'small');
+        border-radius: $rounded-corners;
+        transition: background-color $transition-duration ease-in-out;
+    }
+    & a:hover,
+    & a:focus {
+        background-color: $color-primary;
+        outline:none;
+    }
 }
 
 .nav-icon {
     width: 30px;
     @extend %icon;
 }
+

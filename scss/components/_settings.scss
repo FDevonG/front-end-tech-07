@@ -5,19 +5,42 @@
         align-items: center;
         margin-bottom: map-get($margins, 'medium')
     }
+
     & div:last-child button{
         flex: 1;
+        margin-bottom: 0;
     }
 
+    //sets the margin between the buttons in the settings tab
     & div:last-child button + button{
         margin-left: map-get($margins, 'xsmall' );
     }
 
+    //this selects the save button on the settings card
     & div:last-child button:first-child{
         background-color: $color-primary;
+        &:hover,
+        &:focus {
+            background-color: $color-secondary;
+        }
     }
 
+    //this selects the cancel button on the settings card
     & div:last-child button:last-child{
-        background-color: $color-dark-grey;
+        background-color:$color-dark-grey;
+        &:hover,
+        &:focus {
+            background-color: rgba($color-dark-grey, .6);
+            color: $color-primary;
+        }
+    }
+    & button {
+        transition: background-color color;
+        transition-duration: $transition-duration;
+        transition-timing-function: ease-in-out;
+        &:hover,
+        &:focus{
+            outline:none;
+        }
     }
 }

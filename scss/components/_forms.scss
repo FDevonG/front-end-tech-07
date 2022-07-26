@@ -3,6 +3,13 @@ form {
     max-width: 100%;
     & button{
         background-color: $color-primary;
+        transition: background-color $transition-duration ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: $color-secondary;
+            outline: none;
+        }
     }
 }
 
@@ -24,6 +31,25 @@ textarea,
 select {
     background-color: $color-grey;
     border: $border;
+    transition: background-color, color, border-color;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease-in-out;
+
+    &:hover,
+    &:focus {
+        outline:none;
+        background-color: $color-primary;
+        color: $white;
+        border-color: $color-secondary;
+        &::placeholder{
+            color: $white;
+        }
+    }
+}
+
+select:hover,
+select:focus {
+    background-image: url(../svgs/drop-arrow-white.svg);
 }
 
 input,
@@ -39,5 +65,6 @@ select {
     background-image:url(../svgs/drop-down-arrow.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
-    background-size: 25px;
+    background-size: 30px;
+    font-weight: map-get($font-weights, 'light');
 }

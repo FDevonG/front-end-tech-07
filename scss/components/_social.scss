@@ -3,8 +3,8 @@
     background-color: $color-grey;
     border: 1px solid $color-dark-grey;
     border-radius: $rounded-corners;
-    margin-bottom: 20px;
-    padding: 20px
+    margin-bottom: map-get($margins, 'medium');
+    padding: map-get($margins, 'medium');;
 }
 
 .social-text-container  {
@@ -28,11 +28,11 @@
 
 .social-text{
     color:$color-primary;
-    font-size: 1.5em;
+    font-size: px-to-rem(20px);
 }
 
 .social-number-text{
     color:$color-dark-grey;
-    font-weight: bold;
-    font-size: 2em;
+    font-weight: map-get($font-weights, 'light');
+    font-size: px-to-rem(50px);
 }

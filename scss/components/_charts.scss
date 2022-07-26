@@ -7,16 +7,28 @@
 }
 
 .chart-btn{
-    font-size: .8em;
-    padding: 10px;
+    padding: map-get($margins, 'small');
+    border: 2px solid rgba($color-primary, 0);
     margin: map-get($margins, 'xsmall');
     border-radius: $rounded;
+    background-color: $white;
     color: black;
+    transition: color, background-color, border;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease-in-out;
+
+    &:hover,
+    &:focus {
+        outline:none;
+        color:$white;
+        background-color: $color-chart-button;
+        border: 2px solid $color-primary;
+    }
 }
 
 .selected {
     color: $white;
-    background-color: $color-button;
+    background-color: $color-chart-button;
 }
 
 #mobile-users {

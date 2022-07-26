@@ -1,6 +1,7 @@
 ul {
     list-style: none;
     padding: 0;
+    font-weight: map-get($font-weights, 'light');
 }
 
 li {
@@ -13,7 +14,7 @@ li {
 }
 
  li * {
-    margin-bottom: map-get($margins, 'xsmall' )
+    margin-bottom: map-get($margins, 'small' )
  }
 
  li div {

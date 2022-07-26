@@ -1,26 +1,33 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-family: $main-font-stack;
+    font-weight: map-get($font-weights, 'regular');
 }
 
 h1 {
     color: $white;
-    font-size: 1.25em;
+    font-size: px-to-rem(20px);
 }
 
 h2{
     margin: map-get($margins, 'small');
-    font-size: 1.1em;
+    font-size: px-to-rem(18px);
 }
 
 h3 {
     margin: 0 0 map-get($margins, 'medium');
-    font-size: .9em;
+    font-size: px-to-rem(16px);
 }
 
 h1,
 h2,
 h3{
-    font-weight: 700;
+    font-weight: map-get($font-weights, 'bold');
 }
 
+sup {
+    font-weight: map-get($font-weights, 'light');
+}
+
+p {
+    font-size:px-to-rem(12px);
+}
