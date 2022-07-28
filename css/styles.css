@@ -563,32 +563,33 @@ header {
   color: #fafafa;
 }
 
-/* line 20, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 19, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user-info {
   display: flex;
   justify-content: space-between;
   margin-left: auto;
 }
 
-/* line 24, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 23, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user-info div {
   align-items: center;
 }
 
-/* line 29, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 28, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .user {
   border-left: 1px solid #fafafa;
   padding-left: 10px;
 }
 
-/* line 34, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
-.notification-container {
+/* line 33, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification {
   cursor: pointer;
+  position: relative;
   margin-right: 10px;
 }
 
 /* line 38, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
-.notification-container a {
+.notification a {
   width: 100%;
   height: 100%;
   padding-left: 10px;
@@ -596,29 +597,35 @@ header {
   border-radius: 5px;
   display: flex;
   position: relative;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+/* line 50, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification > a {
   transition: background-color 0.5s ease-in-out;
 }
 
-/* line 49, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
-.notification-container a:hover,
-.notification-container a:focus {
+/* line 54, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification > a:hover,
+.notification > a:focus {
   outline: none;
   background-color: #4d4c72;
 }
 
-/* line 56, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 59, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .notification-icon {
   width: 25px;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 56, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+  /* line 59, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
   .notification-icon {
     width: 50px;
   }
 }
 
-/* line 64, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 67, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .notification-circle {
   width: 10px;
   height: 10px;
@@ -630,14 +637,75 @@ header {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 64, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+  /* line 67, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
   .notification-circle {
     width: 15px;
     height: 15px;
   }
 }
 
-/* line 78, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+/* line 80, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel {
+  position: absolute;
+  width: 200px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  left: -100%;
+  top: 100%;
+  margin: 0 auto;
+  border: 2px solid #4d4c72;
+  min-height: 3.125rem;
+}
+
+/* line 93, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel-message {
+  border-radius: 5px;
+  border: 1px solid #ababab;
+  position: relative;
+}
+
+/* line 98, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel-message a {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #7477bf;
+  transition: background-color 0.5s;
+}
+
+/* line 104, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel-message a:hover {
+  background-color: #4d4c72;
+}
+
+/* line 109, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel-message-xbutton {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  background-color: #ababab;
+  padding: 5px;
+  font-size: 1.125rem;
+  border-radius: 50%;
+  color: #fafafa;
+  border: 2px solid #fafafa;
+  transition: background-color 0.5s;
+}
+
+/* line 120, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel-message-xbutton:hover, .notification-panel-message-xbutton:focus {
+  background-color: #4d4c72;
+}
+
+/* line 127, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
+.notification-panel div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* line 133, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_header.scss */
 .header-name {
   margin-left: 10px;
 }
@@ -1073,6 +1141,13 @@ li div {
   outline: none;
 }
 
+@media screen and (min-width: 768px) {
+  /* line 74, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+  .settings-container .toggle-container {
+    max-width: 60%;
+  }
+}
+
 /* The switch - the box around the slider */
 /* line 2, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_toggleswitch.scss */
 .switch {
@@ -1256,6 +1331,25 @@ select {
   .message .container {
     border-bottom: none;
   }
+}
+
+/* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_notificationsbar.scss */
+.notification-bar {
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #7477bf;
+  color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* line 13, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_notificationsbar.scss */
+#close-alert {
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

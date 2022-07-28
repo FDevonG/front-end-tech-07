@@ -72,8 +72,8 @@
     }
 
     .toggle-container {
-        @include mq('lar'){
-            // max-width: 75%;
+        @include mq('med'){
+            max-width: 60%;
         }
     }
 }

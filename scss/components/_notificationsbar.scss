@@ -1,0 +1,16 @@
+.notification-bar{
+    padding: map-get($margins, 'small');
+    margin: map-get($margins, 'medium');
+    border-radius: $rounded-corners;
+    background-color: $color-primary;
+    color: $white;
+    @include flexy($just: space-between);
+    align-items: center;
+    cursor: pointer;
+
+}
+
+#close-alert{
+    font-weight: map-get($font-weights, 'bold');
+    font-size: px-to-rem(20px);
+}
