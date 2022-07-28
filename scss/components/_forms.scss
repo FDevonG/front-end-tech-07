@@ -26,6 +26,10 @@ select {
     margin-bottom: map-get($margins, 'medium' )
 }
 
+form button:last-child{
+    margin-bottom: 0;
+}
+
 input,
 textarea,
 select {
@@ -38,7 +42,7 @@ select {
     &:hover,
     &:focus {
         outline:none;
-        background-color: $color-primary;
+        background-color: $color-dark-grey;
         color: $white;
         border-color: $color-secondary;
         &::placeholder{

@@ -4,3 +4,19 @@
     justify-content: $just;
     flex-wrap: $wrap;
 }
+
+@mixin mq($break){
+	
+	$value: map-get($breakpoints, $break);
+	$sm: map-get($breakpoints, 'sm');
+	
+	@if $value == null {
+		@error "'#{$break}' is not a valid breakpoint";
+	}
+	@else {
+		@media screen and (min-width: $value){
+			@content;
+		}
+	}
+}
+

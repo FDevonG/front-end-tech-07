@@ -11,20 +11,52 @@ li {
     margin-bottom: map-get($margins, 'medium',);
     padding-bottom: map-get($margins, 'medium' );
     border-bottom: $border;
+
+    @include mq('med'){
+        flex-direction: row;
+    }
+
+    & > img {
+        @include mq('med'){
+            margin-right:map-get($margins, 'medium')
+        }
+    }
+
+    & > span:last-child{
+        @include mq('med'){
+            margin-left: auto;
+        }
+    }
 }
 
  li * {
-    margin-bottom: map-get($margins, 'small' )
+    margin-bottom: map-get($margins, 'xsmall' );
+    @include mq('med'){
+        margin-bottom: 0;
+    }
  }
 
  li div {
     @include flexy($dir: column);
+    @include mq('med'){
+        text-align: left;
+    }
  }
 
  .email {
     color:$color-primary;
 }
 
+.recent-activity {
+    @include mq('med'){
+        border-left:$border;
+    }
+}
+
 .gt-symbol {
     display: none;
+    @include mq('med'){
+        font-size: px-to-rem(40px);
+        display: initial;
+    }
 }

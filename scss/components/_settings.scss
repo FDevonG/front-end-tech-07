@@ -1,9 +1,36 @@
+.settings-wrapper {
+    border-left: $border;
+    & .container {
+        @include mq('med'){
+            border-bottom: none;
+            @include flexy($dir:column, $just: space-around);
+            align-items: stretch;
+        }
+    }
+    & .container,
+    & .card {
+        @include mq('med'){
+            height:100%;
+        }
+    }
+}
 .settings-container {
+
     @include flexy($dir: column);
-    & div {
-        @include flexy($dis: inline-flex, $just: space-between);
+    @include mq('lar'){
+        height: 100%;
+    }
+
+    & > div{
+        @include flexy($dis:flex, $just: space-between);
         align-items: center;
-        margin-bottom: map-get($margins, 'medium')
+        flex:1;
+        &:not(:last-child){
+            margin-bottom: map-get($margins, 'medium');
+            @include mq('lar'){
+                margin-bottom: 0;
+            }
+        }
     }
 
     & div:last-child button{
@@ -43,4 +70,11 @@
             outline:none;
         }
     }
+
+    .toggle-container {
+        @include mq('lar'){
+            // max-width: 75%;
+        }
+    }
 }
+

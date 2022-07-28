@@ -4,6 +4,12 @@
     display: inline-block;
     width: 80px;
     height: 34px;
+    transition: background-color $transition-duration;
+    &:hover .slider::before,
+    &:focus .slider::before{
+      background-color: $color-primary;
+      border: 2px solid $white;
+    }
   }
   
   /* Hide default HTML checkbox */
@@ -51,11 +57,14 @@
   }
 
   .toggle-text{
+    margin-top: map-get($margins, 'xxsmall');
     width:100%;
     height: 100%;
     position: absolute;
+    top:0;
+    left:0;
     text-align: center;
-    padding-left: map-get($margins, 'small');
-    padding-right: map-get($margins, 'small');
     color: $white;
+    @include flexy($just: space-around);
+    align-items: center;
   }

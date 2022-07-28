@@ -7,11 +7,21 @@ nav{
         padding: map-get($margins, 'small');
         border-radius: $rounded-corners;
         transition: background-color $transition-duration ease-in-out;
+        width: 50px;
+        height:50px;
+        @include mq('med'){
+            margin: map-get($margins, 'small');
+        }
     }
     & a:hover,
     & a:focus {
         background-color: $color-primary;
         outline:none;
+    }
+
+    @include mq('med'){
+        flex-direction: column;
+        justify-content: flex-start;
     }
 }
 

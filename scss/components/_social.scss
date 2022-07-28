@@ -1,20 +1,36 @@
-.social-container{
-    @include flexy();
-    background-color: $color-grey;
-    border: 1px solid $color-dark-grey;
-    border-radius: $rounded-corners;
-    margin-bottom: map-get($margins, 'medium');
-    padding: map-get($margins, 'medium');;
-}
+.social-wrapper {
+    display:block;
+    @include mq('med'){
+        @include flexy($just: space-between);
+        .social-container + .social-container {
+            margin-left: map-get($margins, 'medium');
+        }
+    }
 
+    .social-container{
+        @include flexy();
+        background-color: $color-grey;
+        border: 1px solid $color-dark-grey;
+        border-radius: $rounded-corners;
+        margin-bottom: map-get($margins, 'medium');
+        padding: map-get($margins, 'medium');
+        @include mq('med'){
+            margin: 0;
+        }
+        
+        @include mq('med'){
+            flex-grow: 1;
+        }
+    }
+}
 .social-text-container  {
     @include flexy($just: center, $dir: column);
     margin-left: map-get($margins, 'medium');
 }
 
 .social-icon-bg {
-    width:75px;
-    height:75px;
+    width:60px;
+    height:60px;
     background-color: $color-primary;
     border-radius: $round;
     @include flexy;
@@ -28,11 +44,11 @@
 
 .social-text{
     color:$color-primary;
-    font-size: px-to-rem(20px);
+    font-size: px-to-rem(18px);
 }
 
 .social-number-text{
     color:$color-dark-grey;
     font-weight: map-get($font-weights, 'light');
-    font-size: px-to-rem(50px);
+    font-size: px-to-rem(40px);
 }

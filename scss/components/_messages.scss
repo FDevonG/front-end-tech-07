@@ -1,0 +1,5 @@
+.message .container {
+    @include mq('lar'){
+        border-bottom: none;
+    }
+}

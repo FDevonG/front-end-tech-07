@@ -1,11 +1,57 @@
+.main-wrapper {
+    @include mq('med'){
+        display: grid;
+        grid-template-areas: 
+            'header header'
+            'nav main';
+    }
+    grid-template-columns: auto 1fr;
+}
+
+header{
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
 .card {
     width: 90%;
     margin-left:auto;
     margin-right:auto;
+    margin-top:map-get($margins, 'medium');
+    margin-bottom:map-get($margins, 'medium');
 }
 
 .container {
     margin-top:map-get($margins, 'medium');
     margin-bottom:map-get($margins, 'medium');
     border-bottom: $border;
+    @include mq('lar'){
+        margin: 0;
+    }
+}
+
+.flex-layout-container{
+    display: initial;
+    margin:0;
+    @include mq('lar'){
+        @include flexy;
+    }
+    & .widget {
+        @include mq('lar'){
+            flex:1;
+        }
+    }
+
+    & .card {
+        @include mq('med'){
+            margin-top:map-get($margins, 'med');
+        }
+    }
 }

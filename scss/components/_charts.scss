@@ -1,9 +1,49 @@
+.charts {
+    display: block;
+    @include mq('med'){
+        @include flexy($wrap: wrap);
+    
+        & .container:nth-child(1){
+            flex: 1 100%;
+            margin-bottom: 0;
+        }
+        & .container:nth-child(2){
+            & canvas {
+                min-height:80% !important;
+            }
+        }
+        & .container:nth-child(3){
+            border-left: $border;
+        }
+
+        & .container:nth-child(2),
+        & .container:nth-child(3) {
+            margin-top: 0;
+            flex-basis: 50%;
+            & .chart{
+                margin-top: map-get($margins, 'medium');
+            }
+        }
+    }
+}
+
+.chart-buttons-flex-container{
+    @include mq('med'){
+        @include flexy($just: space-between);
+        align-items: center;
+    }
+}
+
 .chart {
-    margin-bottom: map-get($margins, 'small')
+    margin-bottom: map-get($margins, 'small');
+    height: 100%;
 }
 .chart-buttons{
-    @include flexy($just:center);
-    margin: map-get($margins, 'small');
+    // @include flexy($just:center);
+    // margin: map-get($margins, 'small');
+    // @include mq('med') {
+    //     margin-left:auto;
+    // }
 }
 
 .chart-btn{
@@ -12,23 +52,26 @@
     margin: map-get($margins, 'xsmall');
     border-radius: $rounded;
     background-color: $white;
-    color: black;
+    color: $black;
     transition: color, background-color, border;
     transition-duration: $transition-duration;
     transition-timing-function: ease-in-out;
+    @include mq('med'){
+        font-size: px-to-rem(18px);
+    }
 
     &:hover,
     &:focus {
         outline:none;
         color:$white;
-        background-color: $color-chart-button;
+        background-color: $color-third;
         border: 2px solid $color-primary;
     }
 }
 
 .selected {
     color: $white;
-    background-color: $color-chart-button;
+    background-color: $color-third;
 }
 
 #mobile-users {
