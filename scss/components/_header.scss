@@ -89,7 +89,7 @@ header{
         margin: 0 auto;
         border: 2px solid $color-secondary;
         min-height: px-to-rem(50px);
-
+        @extend %box-shadow;
         &-message{
             border-radius: $rounded-corners;
             border: $border;

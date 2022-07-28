@@ -5,12 +5,10 @@ const dataObject = {
     daily: generateChartDataObject(['S', 'M', 'T', 'W', 'T', 'F', 'S'], [65, 115, 165, 80, 230, 200, 100], 'line'),
     weekly: generateChartDataObject(['week 1', 'week 2', 'week 3', 'week 4', 'week 5', 'week 6'], [3500, 4000, 3600, 4300, 3200, 3600], 'line'),
     monthly: generateChartDataObject(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], [15000, 21000, 17600, 18900, 21000, 25400, 18300, 15000, 16700, 24500, 21400, 19500], 'line'),
-}
+};
 
 const trafficCTX = '#traffic-chart';
 let trafficChart = buildChart('line', trafficCTX, dataObject.hourly);
-const dailyChart = buildChart('bar', '#daily-traffic', generateChartDataObject(['S', 'M', 'T', 'W', 'T', 'F', 'S'],[65, 115, 165, 80, 230, 200, 100], 'bar'));
-const mobileChart = buildChart('doughnut', '#mobile-users', generateChartDataObject(['Desktop', 'Tablet', 'Phones'], [700, 245, 357], 'doughnut'));
 
 let notificationPanelOpen = false;
 
@@ -22,12 +20,16 @@ const email = 'email';
 const profile = 'profile';
 const timeZone = 'time-zone';
 
-const memebers = [
+const searchPanel = document.querySelector('.search__results');
+const members = [
     'Victoria Chambers',
     'Dale Byrd',
     'Dawn Wood',
     'Dan Oliver',
 ];
+
+buildChart('bar', '#daily-traffic', generateChartDataObject(['S', 'M', 'T', 'W', 'T', 'F', 'S'],[65, 115, 165, 80, 230, 200, 100], 'bar'));
+buildChart('doughnut', '#mobile-users', generateChartDataObject(['Desktop', 'Tablet', 'Phones'], [700, 245, 357], 'doughnut'));
 
 /**
  * calling the function below it to create a new alert box on the page
@@ -40,11 +42,27 @@ window.onclick = (e) =>{
     if(notificationPanelOpen)
         if(!e.target.closest('.notification'))
             closeNotificationsPanel();
-    
-}
 
+    if(!searchPanel.classList.contains('hidden')){
+        if(!e.target.classList.contains('search__results--result') && e.target === searchPanel){
+            clearSearchResults();
+        }
+    }
+};
+
+/**
+ *adds and event to the search input to call the funtion to build the search results
+ */
 document.querySelector('#user-search').addEventListener('input', (e) => {
     searchForUser(e);
+});
+
+searchPanel.addEventListener('click', (e) => {
+    console.log(e.target);
+    if(e.target.classList.contains('search__results--result')){
+        document.querySelector('#user-search').value = e.target.textContent;
+        clearSearchResults();
+    }
 });
 
 /*turns the default events off the form submit event*/
@@ -71,7 +89,7 @@ document.querySelector('.message form').addEventListener('submit', (e) => {
 /**
  * adds functionality to the notification bell, if clicked it will open or close the notifications panel 
  */
-document.querySelector('.notification a').addEventListener('click', (e) => {
+document.querySelector('.notification a').addEventListener('click', () => {
     if(!notificationPanelOpen){
         openNotificationsPanel();
         closeNotifications();
@@ -259,7 +277,7 @@ function buildChart(type, ctx, sentData) {
         type: `${type}`,
         data: sentData,
         options: generateChartOptions(type),
-    })
+    });
 }
 
 /**
@@ -286,7 +304,7 @@ function generateChartOptions(type) {
                 }
             },
         },
-    }
+    };
     if (type === 'bar' || type === 'line') {
         options.plugins.legend.display = false;
     } else if (type === 'doughnut'){
@@ -294,7 +312,7 @@ function generateChartOptions(type) {
         options.plugins.legend.labels.boxWidth = 25;
         options.plugins.legend.labels.boxHeight = 15;
     }
-    return options
+    return options;
 }
 
 /**
@@ -311,7 +329,7 @@ function generateChartDataObject(labels, data, type){
         datasets: [{
             data: data,
         }]
-    }
+    };
     if (type === 'line'){
         chartData.datasets[0].borderColor = primaryColor;
         chartData.datasets[0].pointBorderWidth = 5;
@@ -391,11 +409,42 @@ function changeToggleText(element){
             if(toggleTexts[x].classList.contains('hidden'))
                 removeClassFromElement(toggleTexts[x], 'hidden');
             else
-                addClasstoElement(toggleTexts[x], 'hidden')
+                addClasstoElement(toggleTexts[x], 'hidden');
         }
     }
 }
 
+/**
+ * checks the search value against the names in the database and shows them in the results field
+ * 
+ * @param {event} e - the event object passed along from the event listener
+ */
 function searchForUser(e){
+    const searchVal = e.target.value.trim();
+    clearSearchResults();
+    if (searchVal !== '') {
+        removeClassFromElement(searchPanel, 'hidden');
+        for (let i = 0; i < members.length; i++){
+            if (members[i].toLowerCase().includes(searchVal.toLowerCase())){
+                const newSpan = document.createElement('span');
+                newSpan.classList.add('search__results--result');
+                newSpan.textContent = members[i];
+                searchPanel.appendChild(newSpan);
+            }
+        }
+    } 
+    else {
+        addClasstoElement(searchPanel, 'hidden');
+    }
+}
 
+/**
+ * clears the search panel results of all nodes
+ */
+function clearSearchResults(){
+    const searchResults = document.querySelectorAll('.search__results--result');
+    for (let i = 0; i < searchResults.length; i++){
+        removeElement(searchResults[i]);
+    }
+    addClasstoElement(searchPanel, 'hidden');
 }

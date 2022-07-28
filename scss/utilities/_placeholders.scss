@@ -3,6 +3,10 @@
     transition: $transition-duration;
 }
 
+%box-shadow{
+    box-shadow: 3px 3px 3px 2px $color-dark-grey;
+}
+
 .hidden {
     visibility: hidden;
 }

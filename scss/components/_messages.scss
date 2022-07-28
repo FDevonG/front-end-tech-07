@@ -3,3 +3,29 @@
         border-bottom: none;
     }
 }
+
+.search{
+    position: relative;
+    &__results{
+        position: absolute;
+        width: 100%;
+        top:100%;
+        @include flexy($dir: column);
+        background-color: $color-secondary;
+        color: $white;
+        margin-top: -20px;
+        border-radius: $rounded-corners;
+        @extend %box-shadow;
+        &--result{
+            padding: map-get($margins, 'small');
+            transition: background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
+            border-radius: $rounded-corners;
+            cursor: pointer;
+            &:hover,
+            &:focus{
+                background-color: $color-grey;
+                color: $color-primary
+            }
+        }
+    }
+}

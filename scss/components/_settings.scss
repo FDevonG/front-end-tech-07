@@ -62,9 +62,7 @@
         }
     }
     & button {
-        transition: background-color color;
-        transition-duration: $transition-duration;
-        transition-timing-function: ease-in-out;
+        transition: background-color $transition-duration ease-in-out, color $transition-duration ease-in-out;
         &:hover,
         &:focus{
             outline:none;

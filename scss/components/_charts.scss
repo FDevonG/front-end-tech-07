@@ -39,11 +39,11 @@
     height: 100%;
 }
 .chart-buttons{
-    // @include flexy($just:center);
-    // margin: map-get($margins, 'small');
-    // @include mq('med') {
-    //     margin-left:auto;
-    // }
+    @include flexy($just:center);
+    margin: map-get($margins, 'small');
+    @include mq('med') {
+        margin-left:auto;
+    }
 }
 
 .chart-btn{

@@ -5,6 +5,11 @@
 }
 
 /* line 6, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
+.notification-panel, .search__results {
+  box-shadow: 3px 3px 3px 2px #ababab;
+}
+
+/* line 10, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/utilities/_placeholders.scss */
 .hidden {
   visibility: hidden;
 }
@@ -834,6 +839,20 @@ nav a:focus {
   height: 100%;
 }
 
+/* line 41, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+.chart-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 41, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
+  .chart-buttons {
+    margin-left: auto;
+  }
+}
+
 /* line 49, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_charts.scss */
 .chart-btn {
   padding: 10px;
@@ -1131,18 +1150,16 @@ li div {
 
 /* line 64, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
 .settings-container button {
-  transition: background-color color;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* line 68, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+/* line 66, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
 .settings-container button:hover, .settings-container button:focus {
   outline: none;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 74, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
+  /* line 72, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_settings.scss */
   .settings-container .toggle-container {
     max-width: 60%;
   }
@@ -1261,15 +1278,16 @@ textarea,
 button,
 select {
   border-radius: 5px;
+  width: 100%;
   margin-bottom: 20px;
 }
 
-/* line 29, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 30, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 form button:last-child {
   margin-bottom: 0;
 }
 
-/* line 33, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 34, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 input,
 textarea,
 select {
@@ -1280,19 +1298,19 @@ select {
   transition-timing-function: ease-in-out;
 }
 
-/* line 42, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 43, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 input:hover, input:focus,
 textarea:hover,
 textarea:focus,
 select:hover,
 select:focus {
   outline: none;
-  background-color: #ababab;
+  background-color: #4d4c72;
   color: #fafafa;
   border-color: #4d4c72;
 }
 
-/* line 48, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 49, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 input:hover::placeholder, input:focus::placeholder,
 textarea:hover::placeholder,
 textarea:focus::placeholder,
@@ -1301,13 +1319,19 @@ select:focus::placeholder {
   color: #fafafa;
 }
 
-/* line 54, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 55, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+option {
+  background-color: #4d4c72;
+  color: #fafafa;
+}
+
+/* line 60, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 select:hover,
 select:focus {
   background-image: url(../svgs/drop-arrow-white.svg);
 }
 
-/* line 59, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 65, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 input,
 button,
 select,
@@ -1315,7 +1339,7 @@ textarea {
   padding: 10px;
 }
 
-/* line 66, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
+/* line 72, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_forms.scss */
 select {
   appearance: none;
   padding-right: 30px;
@@ -1331,6 +1355,38 @@ select {
   .message .container {
     border-bottom: none;
   }
+}
+
+/* line 7, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_messages.scss */
+.search {
+  position: relative;
+}
+
+/* line 9, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_messages.scss */
+.search__results {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #4d4c72;
+  color: #fafafa;
+  margin-top: -20px;
+  border-radius: 5px;
+}
+
+/* line 19, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_messages.scss */
+.search__results--result {
+  padding: 10px;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* line 24, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_messages.scss */
+.search__results--result:hover, .search__results--result:focus {
+  background-color: #f7f7f7;
+  color: #7477bf;
 }
 
 /* line 1, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_notificationsbar.scss */

@@ -23,6 +23,7 @@ textarea,
 button,
 select {
     border-radius: 5px;
+    width: 100%;
     margin-bottom: map-get($margins, 'medium' )
 }
 
@@ -42,13 +43,18 @@ select {
     &:hover,
     &:focus {
         outline:none;
-        background-color: $color-dark-grey;
+        background-color: $color-secondary;
         color: $white;
         border-color: $color-secondary;
         &::placeholder{
             color: $white;
         }
     }
+}
+
+option{
+    background-color: $color-secondary;
+    color: $white;
 }
 
 select:hover,
