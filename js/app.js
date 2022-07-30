@@ -42,12 +42,6 @@ window.onclick = (e) =>{
     if(notificationPanelOpen)
         if(!e.target.closest('.notification'))
             closeNotificationsPanel();
-
-    if(!searchPanel.classList.contains('hidden')){
-        if(!e.target.classList.contains('search__results--result') && e.target === searchPanel){
-            clearSearchResults();
-        }
-    }
 };
 
 /**
@@ -55,6 +49,10 @@ window.onclick = (e) =>{
  */
 document.querySelector('#user-search').addEventListener('input', (e) => {
     searchForUser(e);
+});
+
+document.querySelector('#user-search').addEventListener('blur', (e) => {
+    clearSearchResults();
 });
 
 searchPanel.addEventListener('click', (e) => {
@@ -207,6 +205,8 @@ function createNewNotificationInPanel(message){
             removeElement(e.target.closest('.notification-panel-message'));
         } else if(e.target.classList.contains('notification-panel-message-xbutton')){
             removeElement(e.target.closest('.notification-panel-message'));
+            if(!document.querySelector('.notification-panel-message'))
+                closeNotificationsPanel();
         }
     });
 }
