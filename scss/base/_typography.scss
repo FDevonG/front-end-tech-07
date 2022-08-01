@@ -43,6 +43,7 @@ sup {
 }
 
 p {
+    margin:0;
     font-size:px-to-rem(12px);
     @include mq('med'){
         font-size: px-to-rem(18px);

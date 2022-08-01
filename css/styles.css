@@ -462,6 +462,7 @@ sup {
 
 /* line 45, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/base/_typography.scss */
 p {
+  margin: 0;
   font-size: 0.75rem;
 }
 
@@ -1004,7 +1005,7 @@ li {
 
 @media screen and (min-width: 768px) {
   /* line 25, ../../../../../Users/devongillis/Projects/Websites/front-end-tech-07/scss/components/_members.scss */
-  li > span:last-child {
+  li > p:last-child {
     margin-left: auto;
   }
 }
