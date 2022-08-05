@@ -5,3 +5,55 @@
 body{
     background-color: $white;
 }
+
+body {
+    font-family: $main-font-stack;
+    font-weight: map-get($font-weights, 'regular');
+}
+
+h1 {
+    color: $white;
+    font-size: px-to-rem(20px);
+    @include mq('med'){
+        font-size: px-to-rem(32px);
+    }
+}
+
+h2{
+    margin: map-get($margins, 'small');
+    font-size: px-to-rem(18px);
+    @include mq('med'){
+        font-size: px-to-rem(28px);
+    }
+}
+
+h3 {
+    margin: 0 0 map-get($margins, 'medium');
+    font-size: px-to-rem(16px);
+    @include mq('med'){
+        font-size: px-to-rem(26px);
+    }
+}
+
+h1,
+h2,
+h3{
+    font-weight: map-get($font-weights, 'bold');
+}
+
+h1,
+h3 {
+    margin: 0;
+}
+
+sup {
+    font-weight: map-get($font-weights, 'light');
+}
+
+p {
+    margin:0;
+    font-size:px-to-rem(12px);
+    @include mq('med'){
+        font-size: px-to-rem(18px);
+    }
+}

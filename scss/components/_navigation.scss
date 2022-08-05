@@ -1,32 +1,41 @@
-nav{
+.nav{
     @include flexy($just: space-around);
     background-color: $color-secondary;
-    padding: map-get($margins, 'small');
-
-    & a {
-        padding: map-get($margins, 'small');
-        border-radius: $rounded-corners;
-        transition: background-color $transition-duration ease-in-out;
-        width: 50px;
-        height:50px;
-        @include mq('med'){
-            margin: map-get($margins, 'small');
-        }
-    }
-    & a:hover,
-    & a:focus {
-        background-color: $color-primary;
-        outline:none;
-    }
-
-    @include mq('med'){
+	margin:0;
+	@include mq('med'){
         flex-direction: column;
         justify-content: flex-start;
+		height: 100%;
     }
-}
+	
+	@include e(item){
+		padding: map-get($margins, 'small');
+		border-radius: $rounded-corners;
+		border: none;
+		transition: background-color $transition-duration ease-in-out;
+        width: 50px;
+        height:50px;
+		margin: map-get($margins, 'xsmall');
+		 @include mq('med'){
+            margin: map-get($margins, 'small');
+        }
+		
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			outline:none;
+		}
 
-.nav-icon {
-    width: 30px;
-    @extend %icon;
+		& a{
+			width: 100%;
+			height:100%;
+		}
+	}
+
+	&__icon{
+		width: 30px;
+		height: 30px;
+    	@extend %icon;
+	}
 }
 
