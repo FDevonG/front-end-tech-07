@@ -374,7 +374,7 @@ h1 {
 
 /* line 22, ../scss/base/_base.scss */
 h2 {
-  margin: 10px;
+  margin: 20px;
   font-size: 1.125rem; }
   @media screen and (min-width: 768px) {
     /* line 22, ../scss/base/_base.scss */

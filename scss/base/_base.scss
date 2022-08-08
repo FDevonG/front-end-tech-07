@@ -20,7 +20,7 @@ h1 {
 }
 
 h2{
-    margin: map-get($margins, 'small');
+    margin: map-get($margins, 'medium');
     font-size: px-to-rem(18px);
     @include mq('med'){
         font-size: px-to-rem(28px);
