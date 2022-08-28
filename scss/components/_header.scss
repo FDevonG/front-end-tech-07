@@ -105,29 +105,21 @@ header{
                     background-color: $color-secondary;
                 }
             }
-
-            &-xbutton {
-                position: absolute;
-                right: -8px;
-                top: -8px;
-                background-color: $color-dark-grey;
-                padding: map-get($margins, 'xsmall');
-                font-size: px-to-rem(18px);
-                border-radius: $round;
-                color:$white;
-                border: 2px solid $white;
-                transition: background-color $transition-duration;
-                &:hover,
-                &:focus{
-                    background-color: $color-secondary;
-                }
-            }
         }
 
         & div:not(:last-child){
             margin-bottom: map-get($margins, 'small');
         }
     }
+}
+
+.xbtn-notifcations {
+    @extend %xbutton;
+    width: 24px;
+    height:24px;
+    right: -12px;
+    top: -12px;
+    font-size: px-to-rem(18px);
 }
 
 .header-name{

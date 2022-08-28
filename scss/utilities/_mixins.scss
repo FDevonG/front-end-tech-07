@@ -1,8 +1,9 @@
-@mixin flexy ($dis: flex, $dir: null, $just:null, $wrap: null){
+@mixin flexy ($dis: flex, $dir: null, $just:null, $wrap: null, $align:null){
     display: $dis;
     flex-direction: $dir;
     justify-content: $just;
     flex-wrap: $wrap;
+	align-content: center;
 }
 
 @mixin mq($break){

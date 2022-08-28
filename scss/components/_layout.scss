@@ -1,11 +1,11 @@
 .main-wrapper {
+    grid-template-columns: auto 1fr;
     @include mq('med'){
         display: grid;
         grid-template-areas: 
             'header header'
             'nav main';
     }
-    grid-template-columns: auto 1fr;
 }
 
 header{

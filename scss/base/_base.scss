@@ -28,7 +28,6 @@ h2{
 }
 
 h3 {
-    margin: 0 0 map-get($margins, 'medium');
     font-size: px-to-rem(16px);
     @include mq('med'){
         font-size: px-to-rem(26px);
@@ -42,7 +41,7 @@ h3{
 }
 
 h1,
-h3 {
+h3{
     margin: 0;
 }
 

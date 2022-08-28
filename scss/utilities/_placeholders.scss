@@ -11,3 +11,16 @@
     visibility: hidden;
 }
 
+%xbutton {
+    position: absolute;
+    background-color: $color-dark-grey;
+    border-radius: $round;
+    color:$white;
+    border: 2px solid $white;
+    transition: background-color $transition-duration;
+    @include flexy($align: center, $just: center);
+    &:hover,
+    &:focus{
+        background-color: $color-secondary;
+    }
+}

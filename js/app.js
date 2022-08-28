@@ -35,8 +35,9 @@ buildChart('doughnut', '#mobile-users', generateChartDataObject(['Desktop', 'Tab
  * calling the function below it to create a new alert box on the page
  */
  newNotification('You have unread messages');
+ newNotification('You have unread messages');
 
- resetSettings();
+setUpSettings();
 
 window.onclick = (e) =>{
     if(notificationPanelOpen)
@@ -90,11 +91,13 @@ document.querySelector('.message form').addEventListener('submit', (e) => {
 document.querySelector('.notification a').addEventListener('click', () => {
     if(!notificationPanelOpen){
         openNotificationsPanel();
-        closeNotifications();
+        closeNotification();
     } else {
         closeNotificationsPanel();
     }
 });
+
+document.querySelector('#msg-btn').addEventListener('click', () => messageHandler());
 
 /**
  * changes the txt inside the toggles to represent on or off
@@ -123,8 +126,7 @@ function saveSettings() {
 /**
  * Sesets the setting inputs to the values saved in local storage
  */
-function resetSettings(){
-
+function setUpSettings(){
     if(localStorage.getItem(email)){
 
         let emailBool = emailCheckbox.checked;
@@ -167,6 +169,23 @@ function resetSettings(){
     }
 }
 
+function resetSettings(){
+    localStorage.removeItem(email);
+    let emailBool = emailCheckbox.checked;
+    emailCheckbox.checked = false;
+    if(emailBool !== emailCheckbox.checked)
+        changeToggleText(emailCheckbox);
+
+    localStorage.removeItem(profile);
+    let profileBool = profileCheckbox.checked;
+    profileCheckbox.checked = false;
+    if(profileBool !== profileCheckbox.checked)
+        changeToggleText(profileCheckbox);
+
+    localStorage.removeItem(timeZone);
+    timeZoneSelect.selectedIndex = 0;
+}
+
 /**
  * takes a messaged that is passed to it and buileds an alert box to be displayed at the top of the page
  * 
@@ -178,7 +197,7 @@ function newNotification(message){
     document.querySelector('.notification-bar').addEventListener('mousedown', (e) => {
         if(e.target.id != 'close-alert'){
             openNotificationsPanel();
-            closeNotifications();
+            closeNotification();
         } else {
             closeNotification();
         }
@@ -196,14 +215,14 @@ function createNewNotificationInPanel(message){
     const notificationPanel = document.querySelector('.notification-panel');
     const div = document.createElement('div');
     div.classList.add('notification-panel-message');
-    div.innerHTML = `<span><a href="#">${message}</a></span><span class="notification-panel-message-xbutton">X<span>`;
+    div.innerHTML = `<span><a href="#">${message}</a></span><span class="xbtn-notifcations">X</span>`;
     notificationPanel.appendChild(div);
 
     div.addEventListener('mousedown', (e) => {
-        if(e.target.closest('.notification-panel-message') && !e.target.classList.contains('notification-panel-message-xbutton')){
+        if(e.target.closest('.notification-panel-message') && !e.target.classList.contains('xbtn-notifcations')){
             closeNotificationsPanel();
             removeElement(e.target.closest('.notification-panel-message'));
-        } else if(e.target.classList.contains('notification-panel-message-xbutton')){
+        } else if(e.target.classList.contains('xbtn-notifcations')){
             removeElement(e.target.closest('.notification-panel-message'));
             if(!document.querySelector('.notification-panel-message'))
                 closeNotificationsPanel();
@@ -213,13 +232,13 @@ function createNewNotificationInPanel(message){
 
 /**
  * Creates a new alert box
- * 
- * @param {string} message - the message to display in the alert box
  */
-function createNewAlertBar(message){
+function createNewAlertBar(){
     document.querySelector('.notification-circle').classList.remove('hidden');
-    const innerHTML = `<div class='notification-bar'><span><bold>Alert:</bold> ${message}</span><span id="close-alert">X</span></div>`;
-    document.querySelector('.intro').insertAdjacentHTML('afterend', innerHTML);
+    if(!document.querySelector('.notification-bar')){
+        const innerHTML = `<div class='notification-bar'><span><bold>Alert: </bold>You have a new notifcation</span><span id="close-alert">X</span></div>`;
+        document.querySelector('.intro').insertAdjacentHTML('afterend', innerHTML);
+    }
 }
 
 /**
@@ -227,6 +246,9 @@ function createNewAlertBar(message){
  */
 function openNotificationsPanel(){
     if(!notificationPanelOpen){
+        if(!document.querySelector('.notification-circle').classList.contains('hidden')){
+            addClasstoElement(document.querySelector('.notification-circle'), 'hidden');
+        }
         removeClassFromElement(document.querySelector('.notification-panel'), 'hidden');
         notificationPanelOpen = true;
     }
@@ -247,19 +269,6 @@ function closeNotificationsPanel(){
  */
 function closeNotification(){
     removeElement(document.querySelector('.notification-bar'));
-    if(!document.querySelector('.notification-bar'))
-        addClasstoElement(document.querySelector('.notification-circle'), 'hidden');
-}
-
-/**
- * this gets rid of multiple alert bars at the same time
- */
-function closeNotifications(){
-    const notificationBars = document.querySelectorAll('.notification-bar');
-    for(let i = 0; i < notificationBars.length;i++){
-        removeElement(notificationBars[i]);
-    }
-    addClasstoElement(document.querySelector('.notification-circle'), 'hidden');
 }
 
 /**
@@ -447,4 +456,51 @@ function clearSearchResults(){
         removeElement(searchResults[i]);
     }
     addClasstoElement(searchPanel, 'hidden');
+}
+
+function messageHandler(){
+    const user = document.querySelector('#user-search');
+    const msg = document.querySelector('#message');
+    if(user.value !== '' && msg.value !== ''){
+        displayMessageResult(`Message sent to ${user.value}`);
+        user.value = '';
+        msg.value = '';
+    } else {
+        displayMessageResult('Please enter a name and a message');
+    }
+}
+
+/**
+ * Dispplays a panel on screen letting you know if a message was sent correctly or not
+ * 
+ * @param {String} message 
+ */
+function displayMessageResult(message){
+    disableScrolling();
+    const div = document.createElement('div');
+    div.className = 'msg-fixed-panel';
+    div.innerHTML = `<div class="msg-relative-outter-panel">
+                        <div class="msg-content-main-panel">
+                            <div class="msg-inner-relative-panel">
+                                <span>${message}</span><span class="xbutton-msg">X</span>
+                            </div>
+                        </div>
+                    </div>`;
+    // div.textContent = message;
+    document.querySelector('.main-wrapper').append(div);
+    document.querySelector('.xbutton-msg').addEventListener('click', () => {
+        removeElement(document.querySelector('.msg-fixed-panel'))
+        window.onscroll = () => {};
+    });
+}
+
+/**
+ * This disables scrolling
+ */
+function disableScrolling(){
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    window.onscroll = function() {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
 }
